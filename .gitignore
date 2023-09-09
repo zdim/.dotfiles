@@ -1,0 +1,16 @@
+tags
+node_modules
+.DS_Store
+*~
+.netrwhist
+*.code-workspace
+session/
+packer_compiled.vim
+automatic_backups/
+.config/tmux/plugins/
+
+.zsh_history
+.zcompdump
+.zcompcache
+.chpwd-recent-dirs
+.zsh_sessions

@@ -1,0 +1,25 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.dotfiles: "" 
+    ~/.zshenv: .config/zsh/.zshenv
+    ~/.vim: vim
+    ~/.vimrc: vimrc
+    ~/.config/zsh: .config/zsh
+    ~/.config/nvim: .config/nvim
+    ~/.config/kitty: 
+      force: true
+      path: .config/kitty
+    ~/.Brewfile:
+      if: "[ `uname` = Darwin ]"
+      path: macos/Brewfile
+- create:
+    - ~/downloads
+    - ~/.vim/undo-history
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
