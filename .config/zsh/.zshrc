@@ -8,6 +8,9 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+# add the bin/ folder to the PATH for (n)vim
+export PATH="$PATH:$HOME/bin"
+
 # Create a hash table for globally stashing variables without polluting main
 # scope with a bunch of identifiers.
 typeset -A __DOTS
@@ -102,4 +105,4 @@ alias cauatandroid="yarn build -g ca-sportsbook -r ca-on -p android -e uat"
 export PATH="${HOME}/.pyenv/shims:${PATH}"
 export PYTHON=python2
 
-source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+zsh_add_plugin "zsh-users/zsh-syntax-highlighting"

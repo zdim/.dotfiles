@@ -2,3 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "/home/vboxuser/.dotfiles/.config/zsh/plugins/zsh-syntax-highlighting"]
+	path = /home/vboxuser/.dotfiles/.config/zsh/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
