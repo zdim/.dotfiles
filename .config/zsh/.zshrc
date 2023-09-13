@@ -48,6 +48,70 @@ precmd() { vcs_info }
 # PROMPT='%F{green}%1~%f${vcs_info_msg_0_} %F{magenta}⛧%f '
 
 #-------------------------------------------------------------------------------
+#               COMPLETION
+#-------------------------------------------------------------------------------
+# INIT COMPLETIONS
+autoload -Uz compinit
+compinit
+
+setopt ALWAYS_TO_END
+setopt AUTO_MENU
+setopt LIST_PACKED
+
+# Completion for kitty
+if [[ "$TERM" == "xterm-kitty" ]]; then
+  kitty + complete setup zsh | source /dev/stdin
+fi
+
+# Colorize completions using default `ls` colors.
+zstyle ':completion:*' list-colors ''
+
+# Enable keyboard navigation of completions in menu
+# (not just tab/shift-tab but cursor keys as well):
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+
+# use the vi navigation keys in menu completion
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+
+# persistent reshahing i.e puts new executables in the $path
+# if no command is set typing in a line will cd by default
+zstyle ':completion:*' rehash true
+
+# Allow completion of ..<Tab> to ../ and beyond.
+zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(..) ]] && reply=(..)'
+
+# Categorize completion suggestions with headings:
+zstyle ':completion:*' group-name ''
+# Style the group names
+zstyle ':completion:*' format %F{yellow}%B%U%{$__DOTS[ITALIC_ON]%}%d%{$__DOTS[ITALIC_OFF]%}%b%u%f
+
+# Added by running `compinstall`
+zstyle ':completion:*' expand suffix
+zstyle ':completion:*' file-sort modification
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' list-suffixes true
+# End of lines added by compinstall
+
+# Make completion:
+# (stolen from Wincent)
+# - Try exact (case-sensitive) match first.
+# - Then fall back to case-insensitive.
+# - Accept abbreviations after . or _ or - (ie. f.b -> foo.bar).
+# - Substring complete (ie. bar -> foobar).
+zstyle ':completion:*' matcher-list '' \
+  '+m:{[:lower:]}={[:upper:]}' \
+  '+m:{[:upper:]}={[:lower:]}' \
+  '+m:{_-}={-_}' \
+  'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "$ZSH_CACHE_DIR/zcompcache"
+
+#-------------------------------------------------------------------------------
 #               Prompt
 #-------------------------------------------------------------------------------
 setopt PROMPT_SUBST
