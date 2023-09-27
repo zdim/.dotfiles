@@ -1,4 +1,5 @@
 local lsp = require('lsp-zero')
+local cmp = require('cmp')
 
 lsp.preset("recommended")
 
@@ -24,4 +25,28 @@ lsp.on_attach(function(client, bufnr)
 
 end)
 
+lsp.format_on_save({
+    format_opts = {
+        async = false,
+        timeout_ms = 10000,
+    },
+    servers = {
+        ['eslint'] = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
+        ['rust_analyzer'] = { 'rust' },
+    }
+})
+
 lsp.setup()
+
+cmp.setup({
+    mapping = cmp.mapping.preset.insert({
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<Tab>'] = lsp.cmp_action().luasnip_supertab(),
+        ['<S-Tab>'] = lsp.cmp_action().luasnip_shift_supertab(),
+        ['<C-Space>'] = cmp.mapping.complete(),
+    }),
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
+})
