@@ -20,14 +20,14 @@ return require('packer').startup(function(use)
 
 	use ('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
-	use 'JoosepAlviste/nvim-ts-context-commentstring'
+	-- use 'JoosepAlviste/nvim-ts-context-commentstring'
 
-	use ({
+	use {
 		'numToStr/Comment.nvim',
-		config = function()
-			require('Comment').setup()
-		end
-	})
+		requires = {
+			'JoosepAlviste/nvim-ts-context-commentstring'
+		}
+	}
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',
