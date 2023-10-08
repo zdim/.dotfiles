@@ -15,3 +15,5 @@ automatic_backups/
 .zcompcache
 .chpwd-recent-dirs
 .zsh_sessions
+
+*.appimage
