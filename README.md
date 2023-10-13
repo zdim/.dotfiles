@@ -24,16 +24,17 @@ brew bundle install --file $DOTFILES/macos/Brewfile
 ## Manual configurations
 ### Setting Capslock as Ctrl/Escape
 On macOS, this is easily done using [Karabiner](https://karabiner-elements.pqrs.org/).
+
 On Windows, this is somewhat achieved using [PowerToys](https://learn.microsoft.com/en-us/windows/powertoys/).
+
 On Ubuntu (v22.04), this is less easily done with a few steps:
 - Install GNOME Tweaks using `sudo apt install gnome-tweaks`
 - In Tweaks, go to Keyboard & Mouse > Additional Layout Options > Ctrl position > Caps Lock as Ctrl
 - Install xcape `sudo apt-get install xcape`
 - Run `xcape -e Control_L=Escape` to map Control (now Caps Lock) as Escape when pressed
 - This line is added to the `.profile` file so it runs on init
+
 NOTE: xcape doesn't work properly with Wayland
 
-## Not yet included
-- Fonts
-- VS Codium
-- Windows support
+### Font
+Julia Mono: https://github.com/cormullion/juliamono/releases
