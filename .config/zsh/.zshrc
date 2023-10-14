@@ -32,6 +32,16 @@ fpath=($ZDOTDIR/functions $fpath)
 autoload -Uz $ZDOTDIR/functions/*(.:t)
 autoload -U colors && colors
 
+#-------------------------------------
+#     source plugins
+#-------------------------------------
+zsh_add_plugin		"zsh-users/zsh-autosuggestions"
+zsh_add_plugin		"zsh-users/zsh-completions"
+zsh_add_plugin		"djui/alias-tips"
+
+#-------------------------------------
+#		version control
+#-------------------------------------
 autoload -Uz vcs_info
 
 # Using named colors means that the prompt automatically adapts to how these
@@ -48,9 +58,8 @@ zstyle ':vcs_info:git:*' formats "%F{249}(%f%F{blue}%{$__DOTS[ITALIC_ON]%}%b%{$_
 precmd() { vcs_info }
 
 #-------------------------------------------------------------------------------
-#               COMPLETION
+#              completions 
 #-------------------------------------------------------------------------------
-# INIT COMPLETIONS
 autoload -Uz compinit
 compinit
 
@@ -111,9 +120,9 @@ zstyle ':completion:*' matcher-list '' \
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$ZSH_CACHE_DIR/zcompcache"
 
-#-------------------------------------------------------------------------------
-#               Prompt
-#-------------------------------------------------------------------------------
+#--------------------------------------------
+#               prompt
+#--------------------------------------------
 setopt PROMPT_SUBST
 function __prompt_eval() {
   local dots_prompt_icon="%F{magenta}⛧ %f"
