@@ -131,40 +131,18 @@ export PROMPT='$(__prompt_eval)'
 # Correction prompt
 export SPROMPT="correct %F{red}'%R'%f to %F{red}'%r'%f [%B%Uy%u%bes, %B%Un%u%bo, %B%Ue%u%bdit, %B%Ua%u%bbort]? "
 
+# Load local scripts
+for script in $ZDOTDIR/scripts/*; do
+  source $script
+done
 
-pr() { open https://dev.azure.com/PointsBet/PointsBet/_git/Web-Micro/pullrequest/"$1" }
-ticket() { open https://dev.azure.com/pointsbet/PointsBet/_workitems/edit/"$1" }
-build() { open "https://dev.azure.com/pointsbet/PointsBet/_build/results?buildId=$1" }
+# Plugin config
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=241'
+ZSH_AUTOSUGGEST_USE_ASYNC=1
 
-newbug() { open "https://dev.azure.com/pointsbet/PointsBet/_workitems/create/bug" }
-newstory() { open "https://dev.azure.com/pointsbet/PointsBet/_workitems/create/user story" }
-newei() { open "https://dev.azure.com/pointsbet/PointsBet/_workitems/create/engineering improvement" }
+last_working_dir
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-alias code=codium
-alias njdev="yarn build -g us-sportsbook -r us-nj -p web -e dev && yarn dev --reset"
-alias njuat="yarn build -g us-sportsbook -r us-nj -p web -e uat && yarn dev --reset"
-alias njdevcasino="yarn build -g us-casino -r us-nj-casino -p web -e dev && yarn dev --reset"
-alias njuatcasino="yarn build -g us-casino -r us-nj-casino -p web -e uat && yarn dev --reset"
-alias audev="yarn build -g au-sportsbook -r au -p web -e dev && yarn dev --reset"
-alias auuat="yarn build -g au-sportsbook -r au -p web -e uat && yarn dev --reset"
-alias cadev="yarn build -g ca-sportsbook -r ca-on -p web -e dev && yarn dev --reset"
-alias cauat="yarn build -g ca-sportsbook -r ca-on -p web -e uat && yarn dev --reset"
-alias couat="yarn build -g us-sportsbook -r us-co -p web -e uat && yarn dev --reset"
-alias pauat="yarn build -g us-sportsbook -r us-pa -p web -e uat && yarn dev --reset"
-alias vauat="yarn build -g us-sportsbook -r us-va -p web -e uat && yarn dev --reset"
-alias wvuat="yarn build -g us-sportsbook -r us-wv -p web -e uat && yarn dev --reset"
-alias nyuat="yarn build -g us-sportsbook -r us-ny -p web -e uat && yarn dev --reset"
-alias rwuat="yarn build -g rw-sportsbook -r rw-us-ny -p web -e uat && yarn dev --reset"
-alias usuatios="yarn build -g us-sportsbook -r us-co -p ios -e uat"
-alias usdevios="yarn build -g us-sportsbook -r us-co -p ios -e dev"
-alias auuatios="yarn build -g au-sportsbook -r au -p ios -e uat"
-alias cauatios="yarn build -g ca-sportsbook -r ca-on -p ios -e uat"
-alias usuatandroid="yarn build -g us-sportsbook -r us-co -p android -e uat"
-alias auuatandroid="yarn build -g au-sportsbook -r au -p android -e uat"
-alias usdevandroid="yarn build -g us-sportsbook -r us-co -p android -e dev"
-alias cauatandroid="yarn build -g ca-sportsbook -r ca-on -p android -e uat"
 
 export PATH="${HOME}/.pyenv/shims:${PATH}"
 export PYTHON=python2

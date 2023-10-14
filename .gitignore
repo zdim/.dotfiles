@@ -17,3 +17,6 @@ automatic_backups/
 .zsh_sessions
 
 *.appimage
+
+# prevent certain files from being published
+*.hide.*
