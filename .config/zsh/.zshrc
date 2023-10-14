@@ -8,6 +8,9 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+export PATH="${HOME}/.pyenv/shims:${PATH}"
+export PYTHON=python2
+
 # add the bin/ folder to the PATH for (n)vim
 export PATH="$PATH:$HOME/bin"
 
@@ -43,9 +46,6 @@ zstyle ':vcs_info:git*:*' actionformats '(%B%F{red}%b|%a%c%u%%b%f) '
 zstyle ':vcs_info:git:*' formats "%F{249}(%f%F{blue}%{$__DOTS[ITALIC_ON]%}%b%{$__DOTS[ITALIC_OFF]%}%f%F{249})%f%c%u%m"
 
 precmd() { vcs_info }
-
-# PROMPT='%{$fg[green]%}%1~%{$reset_color%}${vcs_info_msg_0_} %{$fg[magenta]%}⛧${reset_color%} '
-# PROMPT='%F{green}%1~%f${vcs_info_msg_0_} %F{magenta}⛧%f '
 
 #-------------------------------------------------------------------------------
 #               COMPLETION
@@ -123,7 +123,7 @@ function __prompt_eval() {
   local bottom=$([[ -n "$vim_mode" ]] && echo "$vim_mode" || echo "$character")
   echo $top$'\n'$bottom
 }
-# NOTE: VERY IMPORTANT: the type of quotes used matters greatly. Single quotes MUST be used for these variables
+# NOTE: single quotes must be used for these variables
 export PROMPT='$(__prompt_eval)'
 # PROMPT = %B%F{magenta}%1~%f%b${vcs_info_msg_0}
 # Right prompt
@@ -131,20 +131,23 @@ export PROMPT='$(__prompt_eval)'
 # Correction prompt
 export SPROMPT="correct %F{red}'%R'%f to %F{red}'%r'%f [%B%Uy%u%bes, %B%Un%u%bo, %B%Ue%u%bdit, %B%Ua%u%bbort]? "
 
-# Load local scripts
+# -----------------------------
+#     Load local scripts
+# -----------------------------
 for script in $ZDOTDIR/scripts/*; do
   source $script
 done
 
-# Plugin config
+# -----------------------------
+#     Plugin config
+# -----------------------------
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=241'
 ZSH_AUTOSUGGEST_USE_ASYNC=1
 
 last_working_dir
 
+# a little hack to fix react-native breaking
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export PATH="${HOME}/.pyenv/shims:${PATH}"
-export PYTHON=python2
-
+# syntax-highlighting must be enabled last so all the extra commands are registered
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
