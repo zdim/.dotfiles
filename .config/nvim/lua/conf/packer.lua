@@ -20,8 +20,6 @@ return require('packer').startup(function(use)
 
 	use ('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
-	-- use 'JoosepAlviste/nvim-ts-context-commentstring'
-
 	use {
 		'numToStr/Comment.nvim',
 		requires = {
@@ -51,5 +49,17 @@ return require('packer').startup(function(use)
     }
 
     use 'lewis6991/gitsigns.nvim'
+	
+	use {
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		requires = { 
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+		}
+	}
+
+	use 'stevearc/dressing.nvim'
 	
 end)
