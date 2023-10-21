@@ -1,4 +1,5 @@
 alias grep="grep --color"
+alias ls="ls --color"
 
 (( $+commands[bat] )) && alias cat='bat'
 (( $+commands[codium] )) && alias code='codium'
