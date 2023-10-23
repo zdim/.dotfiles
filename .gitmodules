@@ -6,11 +6,11 @@
 	path = .config/zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule "/home/zdim/.dotfiles/.config/zsh/plugins/zsh-autosuggestions"]
-	path = /home/zdim/.dotfiles/.config/zsh/plugins/zsh-autosuggestions
+	path = .config/zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule "/home/zdim/.dotfiles/.config/zsh/plugins/zsh-completions"]
-	path = /home/zdim/.dotfiles/.config/zsh/plugins/zsh-completions
+	path = .config/zsh/plugins/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions.git
 [submodule "/home/zdim/.dotfiles/.config/zsh/plugins/alias-tips"]
-	path = /home/zdim/.dotfiles/.config/zsh/plugins/alias-tips
+	path = .config/zsh/plugins/alias-tips
 	url = https://github.com/djui/alias-tips.git
