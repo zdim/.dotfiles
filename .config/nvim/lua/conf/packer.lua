@@ -49,6 +49,10 @@ return require('packer').startup(function(use)
     }
 
     use 'lewis6991/gitsigns.nvim'
+
+	use {'akinsho/git-conflict.nvim', tag = "*", config = function()
+		require('git-conflict').setup()
+	end}
 	
 	use {
 		"nvim-neo-tree/neo-tree.nvim",
