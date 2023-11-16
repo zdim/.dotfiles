@@ -3,6 +3,7 @@ local tree = require('neo-tree')
 tree.setup({
 	hide_dotfiles = false,
 	hide_gitignored = false,
+	close_if_last_window = true,
 })
 
 vim.keymap.set('n', '<leader>b', ':Neotree toggle focus right<cr>')

@@ -45,9 +45,5 @@ cmp.setup({
         ['<Tab>'] = lsp.cmp_action().luasnip_supertab(),
         ['<S-Tab>'] = lsp.cmp_action().luasnip_shift_supertab(),
         ['<C-Space>'] = cmp.mapping.complete(),
-    }),
-    window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
-    },
+    })
 })
