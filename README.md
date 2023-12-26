@@ -8,6 +8,10 @@ My dotfiles including:
 
 Made with Mac & Linux in mind, Windows might have some problems 😬 
 
+## Prereqs
+- [homebrew](https://brew.sh/)
+- [nvm](https://github.com/nvm-sh/nvm)
+
 ## Usage
 This is setup using [https://github.com/anishathalye/dotbot](dotbot), a tool that helps manage symlinks.
 
