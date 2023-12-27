@@ -59,6 +59,8 @@ return require('packer').startup(function(use)
 		require('git-conflict').setup()
 	end}
 	
+	use 'nvim-tree/nvim-web-devicons'
+
 	use {
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
