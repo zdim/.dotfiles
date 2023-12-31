@@ -4,6 +4,12 @@ tree.setup({
 	hide_dotfiles = false,
 	hide_gitignored = false,
 	close_if_last_window = true,
+	filesystem = {
+		filtered_items = {
+			-- shows hidden files by default
+			visible = true,
+		}
+	}
 })
 
 vim.keymap.set('n', '<leader>b', ':Neotree toggle focus right<cr>')
