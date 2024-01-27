@@ -1,3 +1,2 @@
 -- vim.cmd.colorscheme('midnight')
-vim.cmd.colorscheme('moonfly')
-
+vim.cmd.colorscheme('aura-dark')

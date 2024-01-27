@@ -23,6 +23,16 @@ return require('packer').startup(function(use)
 		as = 'moonfly'
 	})
 
+	use {
+		'daltonmenezes/aura-theme',
+		rtp = 'packages/neovim',
+		config = function()
+			vim.cmd("colorscheme aura-dark") -- Or any Aura theme available
+		end
+	}
+
+	use "EdenEast/nightfox.nvim"
+
 	use ('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
 	use {
