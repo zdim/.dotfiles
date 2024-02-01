@@ -10,6 +10,9 @@ export PYTHON=python2
 # add the bin/ folder to the PATH for (n)vim
 export PATH="$PATH:$HOME/bin"
 
+# this is setup via homebrew
+eval $(thefuck --alias)
+
 # Create a hash table for globally stashing variables without polluting main
 # scope with a bunch of identifiers.
 typeset -A __DOTS
