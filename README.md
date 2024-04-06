@@ -13,7 +13,7 @@ Made with Mac & Linux in mind, Windows might have some problems 😬
 - [nvm](https://github.com/nvm-sh/nvm)
 
 ## Usage
-This is setup using [https://github.com/anishathalye/dotbot](dotbot), a tool that helps manage symlinks.
+This is setup using [dotbot](https://github.com/anishathalye/dotbot), a tool that helps manage symlinks.
 
 To create the symlinks, run `./install` in the root of this repo.
 
