@@ -8,3 +8,4 @@ export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
 export DOTFILES=${HOME}/.dotfiles
 export PROJECT_DIR=${HOME}/Projects
 
+. "$HOME/.cargo/env"
