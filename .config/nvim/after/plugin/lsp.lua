@@ -8,7 +8,10 @@ lsp.ensure_installed({
 	'eslint',
 	'rust_analyzer',
 	'gopls'
+	-- 'kotlin_language_server'
 })
+
+-- require('lspconfig').kotlin_language_server.setup{}
 
 lsp.on_attach(function(client, bufnr)
 	local opts = {buffer = bufnr, remap = false}
