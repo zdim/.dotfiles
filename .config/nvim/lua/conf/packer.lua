@@ -23,29 +23,18 @@ return require('packer').startup(function(use)
 	}
 
 	-- start themes
-	use ({
-		'dasupradyumna/midnight.nvim',
-		as = 'midnight',
-		config = function()
-			vim.cmd('colorscheme midnight')
-		end
-	})
-
-	use ({
-		'bluz71/vim-moonfly-colors',
-		as = 'moonfly'
-	})
-
-	use {
-		'daltonmenezes/aura-theme',
-		rtp = 'packages/neovim',
-		config = function()
-			vim.cmd("colorscheme aura-dark") -- Or any Aura theme available
-		end
-	}
-
+	use "dasupradyumna/midnight.nvim" 
+	use "bluz71/vim-moonfly-colors" 
 	use "EdenEast/nightfox.nvim"
 	use "aktersnurra/no-clown-fiesta.nvim"
+	use {
+		'daltonmenezes/aura-theme',
+		rtp = 'packages/neovim'
+	}
+	use {
+		"mcchrish/zenbones.nvim",
+		requires = "rktjmp/lush.nvim"
+	}
 	-- end themes
 
 	use ('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
