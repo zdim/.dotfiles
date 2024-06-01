@@ -11,6 +11,12 @@ lsp.ensure_installed({
 	-- 'kotlin_language_server'
 })
 
+lsp.set_server_config({
+	on_init = function(client)
+		client.server_capabilities.semanticTokensProvider = nil
+	end,
+})
+
 -- require('lspconfig').kotlin_language_server.setup{}
 
 lsp.on_attach(function(client, bufnr)
