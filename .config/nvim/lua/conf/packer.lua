@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
 		requires = ({ 'nvim-lua/plenary.nvim' })
 	}
 
-	-- theme
+	-- start themes
 	use ({
 		'dasupradyumna/midnight.nvim',
 		as = 'midnight',
@@ -45,6 +45,8 @@ return require('packer').startup(function(use)
 	}
 
 	use "EdenEast/nightfox.nvim"
+	use "aktersnurra/no-clown-fiesta.nvim"
+	-- end themes
 
 	use ('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
