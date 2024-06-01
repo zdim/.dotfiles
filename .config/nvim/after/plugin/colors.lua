@@ -1,2 +1,1 @@
--- vim.cmd.colorscheme('midnight')
-vim.cmd.colorscheme('duskfox')
+vim.cmd.colorscheme('rosebones')
