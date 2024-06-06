@@ -16,6 +16,7 @@ end)
 vim.keymap.set('n', '<leader>pg', builtin.git_status, {});
 vim.keymap.set('n', '<leader>hc', builtin.commands, {});
 vim.keymap.set('n', '<leader>lr', builtin.lsp_references, {});
+vim.keymap.set('n', '<leader>PS', builtin.live_grep, {})
 
 require('telescope').setup({
     defaults = {
