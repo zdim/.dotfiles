@@ -7,7 +7,6 @@ alias ls="ls --color"
 
 # vim
 alias v='nvim'
-alias vi='nvim'
 alias vim='nvim'
 
 # open all these files in nvim
