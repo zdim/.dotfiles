@@ -4,12 +4,15 @@ local cmp = require('cmp')
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-	'tsserver',
+	'ts_ls',
 	'eslint',
 	'rust_analyzer',
 	'gopls'
-	-- 'kotlin_language_server'
+	-- 'kotlin_language_server',
+	-- 'sourcekit'
 })
+
+require('lspconfig').sourcekit.setup({})
 
 lsp.set_server_config({
 	on_init = function(client)
@@ -43,6 +46,7 @@ lsp.format_on_save({
     servers = {
         ['eslint'] = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
         ['rust_analyzer'] = { 'rust' },
+		['swift'] = { 'sourcekit' },
     }
 })
 
