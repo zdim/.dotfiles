@@ -7,7 +7,9 @@ lsp.ensure_installed({
 	'ts_ls',
 	'eslint',
 	'rust_analyzer',
-	'gopls'
+	'gopls',
+	'terraformls',
+	'tflint'
 	-- 'kotlin_language_server',
 	-- 'sourcekit'
 })
