@@ -159,3 +159,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # syntax-highlighting must be enabled last so all the extra commands are registered
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
