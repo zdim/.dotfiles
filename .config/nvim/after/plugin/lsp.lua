@@ -5,6 +5,7 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
 	'ts_ls',
+	-- NOTE: eslint 4.10.0 has an issue, prefer 4.8.0
 	'eslint',
 	'rust_analyzer',
 	'gopls',
@@ -15,7 +16,7 @@ lsp.ensure_installed({
 })
 
 require('lspconfig').sourcekit.setup({})
-require('lspconfig')['ts_ls'].setup({})
+require('lspconfig').ts_ls.setup({})
 
 lsp.set_server_config({
 	on_init = function(client)
@@ -48,7 +49,6 @@ lsp.format_on_save({
     },
     servers = {
         ['eslint'] = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
-        ['ts_ls'] = { 'typescript', 'typescriptreact' },
         ['rust_analyzer'] = { 'rust' },
 		['swift'] = { 'sourcekit' },
 		['terraformls'] = { 'terraform', 'tf' },
