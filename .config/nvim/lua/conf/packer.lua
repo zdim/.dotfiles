@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
 
 	-- start themes
 	use "dasupradyumna/midnight.nvim"
+	use 'Yazeed1s/minimal.nvim'
 	use "bluz71/vim-moonfly-colors"
 	use "EdenEast/nightfox.nvim"
 	use "aktersnurra/no-clown-fiesta.nvim"
