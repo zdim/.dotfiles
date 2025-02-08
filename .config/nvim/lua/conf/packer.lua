@@ -36,6 +36,7 @@ return require('packer').startup(function(use)
 		"mcchrish/zenbones.nvim",
 		requires = "rktjmp/lush.nvim"
 	}
+	use "metalelf0/base16-black-metal-scheme"
 	-- end themes
 
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
