@@ -11,11 +11,8 @@ lsp.ensure_installed({
 	'gopls',
 	'terraformls',
 	'tflint'
-	-- 'kotlin_language_server',
-	-- 'sourcekit'
 })
 
-require('lspconfig').sourcekit.setup({})
 require('lspconfig').ts_ls.setup({})
 
 lsp.set_server_config({
@@ -23,8 +20,6 @@ lsp.set_server_config({
 		client.server_capabilities.semanticTokensProvider = nil
 	end,
 })
-
--- require('lspconfig').kotlin_language_server.setup{}
 
 lsp.on_attach(function(client, bufnr)
 	local opts = {buffer = bufnr, remap = false}
@@ -50,7 +45,6 @@ lsp.format_on_save({
     servers = {
         ['eslint'] = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
         ['rust_analyzer'] = { 'rust' },
-		['swift'] = { 'sourcekit' },
 		['terraformls'] = { 'terraform', 'tf' },
     }
 })
