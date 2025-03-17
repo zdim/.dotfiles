@@ -14,3 +14,6 @@
 [submodule "/home/zdim/.dotfiles/.config/zsh/plugins/alias-tips"]
 	path = .config/zsh/plugins/alias-tips
 	url = https://github.com/djui/alias-tips.git
+[submodule "/Users/zach.dimarco/.dotfiles/.config/zsh/plugins/gradle-completion"]
+	path = /Users/zach.dimarco/.dotfiles/.config/zsh/plugins/gradle-completion
+	url = https://github.com/gradle/gradle-completion.git
