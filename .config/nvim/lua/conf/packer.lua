@@ -82,6 +82,8 @@ return require('packer').startup(function(use)
 
 	use 'stevearc/dressing.nvim'
 
+	use 'github/copilot.vim'
+
 	-- bootstrap packer itself
 	-- must go at the end
 	if packer_bootstrap then
