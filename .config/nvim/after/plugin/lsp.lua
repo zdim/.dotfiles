@@ -27,6 +27,13 @@ require('mason-lspconfig').setup({
 				capabilities = lsp_capabilities,
 			})
 		end,
+		eslint = function()
+			require('lspconfig').eslint.setup({
+				settings = {
+					format = true
+				}
+			})
+		end,
 		lua_ls = function()
 			require('lspconfig').lua_ls.setup({
 				capabilities = lsp_capabilities,
@@ -63,7 +70,7 @@ cmp.setup({
 	mapping = cmp.mapping.preset.insert({
 		['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
 		['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-		['<C-y>'] = cmp.mapping.confirm({ select = true }),
+		['<CR>'] = cmp.mapping.confirm({ select = true }),
 		['<C-Space>'] = cmp.mapping.complete(),
 	}),
 	snippet = {
