@@ -20,3 +20,5 @@ automatic_backups/
 
 # prevent certain files from being published
 *.hide.*
+
+.zcompdump.*
