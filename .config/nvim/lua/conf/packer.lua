@@ -83,6 +83,18 @@ return require('packer').startup(function(use)
 	use 'stevearc/dressing.nvim'
 
 	use 'github/copilot.vim'
+	use {
+		'CopilotC-Nvim/CopilotChat.nvim',
+		requires = {
+			'github/copilot.vim',
+			'nvim-lua/plenary.nvim',
+		},
+		config = function()
+			require('CopilotChat').setup({
+				model = 'gpt-4.1'
+			})
+		end
+	}
 
 	-- bootstrap packer itself
 	-- must go at the end
