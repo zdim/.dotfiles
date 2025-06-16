@@ -21,7 +21,7 @@ vim.keymap.set('n', '<leader>PS', builtin.live_grep, {})
 require('telescope').setup({
     defaults = {
         file_ignore_patterns = {
-            'node_modules', '.git'
+            'node_modules', '.git/'
         },
     }
 });
