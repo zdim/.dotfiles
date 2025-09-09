@@ -22,3 +22,6 @@ automatic_backups/
 *.hide.*
 
 .zcompdump.*
+
+*.local
+*.local.*
