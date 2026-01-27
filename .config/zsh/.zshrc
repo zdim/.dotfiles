@@ -10,6 +10,8 @@ export PYTHON=python2
 # add the bin/ folder to the PATH for (n)vim
 export PATH="$PATH:$HOME/bin"
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # this is setup via homebrew
 eval $(thefuck --alias)
 
