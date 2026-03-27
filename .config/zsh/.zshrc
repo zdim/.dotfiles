@@ -7,6 +7,8 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH="${HOME}/.pyenv/shims:${PATH}"
 export PYTHON=python2
 
+export PATH=$PATH:$GOPATH/bin
+
 # add the bin/ folder to the PATH for (n)vim
 export PATH="$PATH:$HOME/bin"
 
