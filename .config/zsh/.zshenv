@@ -8,5 +8,6 @@ export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
 export GOPATH=${HOME}/go
 export DOTFILES=${HOME}/.dotfiles
 export PROJECT_DIR=${HOME}/Projects
+export EDITOR=vim
 
 . "$HOME/.cargo/env"
