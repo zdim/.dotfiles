@@ -1,0 +1,33 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "permissions": {
+    "allow": [
+      "Bash(tail:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(xargs:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(wc:*)"
+    ]
+  },
+  "model": "opus[1m]",
+  "enabledPlugins": {
+    "fbg-core@fbg-claude-plugins": true,
+    "figma@claude-plugins-official": true,
+    "fuel-plugin@fuel-marketplace": true,
+    "fuel-spec-plugin@fuel-marketplace": true
+  },
+  "extraKnownMarketplaces": {
+    "fuel-marketplace": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/zach.dimarco/Projects/fuel-claude-marketplace"
+      }
+    }
+  },
+  "alwaysThinkingEnabled": true
+}

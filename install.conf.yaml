@@ -26,6 +26,12 @@
     ~/.config/karabiner:
       force: true
       path: .config/karabiner
+    ~/.claude/CLAUDE.md:
+      path: .config/claude/CLAUDE.md
+      force: true
+    ~/.claude/settings.json:
+      path: .config/claude/settings.json
+      force: true
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
