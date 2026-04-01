@@ -19,7 +19,7 @@ local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-	ensure_installed = { 'ts_ls', 'eslint', 'rust_analyzer' },
+	ensure_installed = { 'ts_ls', 'eslint', 'rust_analyzer', 'kotlin_language_server' },
 	handlers = {
 		function(server_name)
 			require('lspconfig')[server_name].setup({
@@ -50,6 +50,20 @@ require('mason-lspconfig').setup({
 						workspace = {
 							library = {
 								vim.env.VIMRUNTIME,
+							}
+						}
+					}
+				}
+			})
+		end,
+		["kotlin_language_server"] = function()
+			require('lspconfig').kotlin_language_server.setup({
+				capabilities = lsp_capabilities,
+				settings = {
+					kotlin = {
+						compiler = {
+							jvm = {
+								target = "21"
 							}
 						}
 					}
