@@ -16,3 +16,5 @@ alias lg='lazygit'
 
 alias cors='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
 alias p='pnpm'
+
+alias dangerclaude='claude --dangerously-skip-permissions'
