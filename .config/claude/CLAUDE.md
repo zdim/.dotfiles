@@ -3,6 +3,7 @@
 ## Environment
 
 - This file and `~/.claude/settings.json` are symlinked from `~/.dotfiles/.config/claude/`. Changes here are tracked in the dotfiles repo at `~/.dotfiles`.
+- `settings.json` is curated for **global** settings only (model, generic shell permissions, plugins). Do NOT add project-specific permissions, paths, or commands to it — those belong in project-level `.claude/settings.json` files instead.
 
 ## Working Style
 

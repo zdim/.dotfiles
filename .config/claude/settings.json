@@ -1,18 +1,35 @@
 {
-  "attribution": {
-    "commit": "",
-    "pr": ""
-  },
   "permissions": {
     "allow": [
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
       "Bash(tail:*)",
+      "Bash(wc:*)",
       "Bash(grep:*)",
       "Bash(find:*)",
       "Bash(xargs:*)",
-      "Bash(ls:*)",
-      "Bash(cat:*)",
-      "Bash(wc:*)"
-    ]
+      "Bash(jq:*)",
+      "Bash(git:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(gh issue view:*)",
+      "Bash(gh api:*)",
+      "WebSearch",
+      "mcp__excalidraw__read_diagram_guide",
+      "mcp__excalidraw__describe_scene",
+      "mcp__excalidraw__batch_create_elements",
+      "mcp__excalidraw__set_viewport",
+      "mcp__excalidraw__get_canvas_screenshot",
+      "mcp__excalidraw__clear_canvas",
+      "mcp__excalidraw__update_element",
+      "mcp__excalidraw__query_elements",
+      "mcp__excalidraw__get_element",
+      "mcp__excalidraw__delete_element",
+      "mcp__excalidraw__create_element",
+      "mcp__excalidraw__export_scene"
+    ],
+    "defaultMode": "acceptEdits"
   },
   "model": "opus[1m]",
   "enabledPlugins": {
