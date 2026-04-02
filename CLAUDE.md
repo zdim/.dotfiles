@@ -36,9 +36,9 @@ Dotbot symlinks these paths into `~/.config/` and `~/`:
 ### Neovim (`.config/nvim/`)
 
 - `init.lua` → requires `conf` module
-- `lua/conf/` — core config: `init.lua` (loads keymaps + settings), `keymaps.lua`, `settings.lua`, `packer.lua` (plugin declarations)
+- `lua/conf/` — core config: `init.lua` (loads keymaps + settings + lazy), `keymaps.lua`, `settings.lua`, `lazy.lua` (plugin declarations)
 - `after/plugin/` — per-plugin configuration files (lsp, telescope, treesitter, gitsigns, lualine, neotree, etc.)
-- Plugin manager: **packer.nvim**
+- Plugin manager: **lazy.nvim**
 - LSP: mason.nvim + mason-lspconfig + nvim-lspconfig + nvim-cmp
 
 ### Claude Code (`.config/claude/`)
