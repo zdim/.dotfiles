@@ -1,5 +1,9 @@
 # Global Instructions
 
+## Environment
+
+- This file and `~/.claude/settings.json` are symlinked from `~/.dotfiles/.config/claude/`. Changes here are tracked in the dotfiles repo at `~/.dotfiles`.
+
 ## Working Style
 
 - When making code changes, prefer minimal targeted fixes. Do NOT make sweeping refactors, add logging utilities, or rename things beyond what was explicitly requested. Ask before expanding scope.
