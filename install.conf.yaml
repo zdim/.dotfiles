@@ -32,6 +32,9 @@
     ~/.claude/settings.json:
       path: .config/claude/settings.json
       force: true
+    ~/.claude/hooks:
+      path: .config/claude/hooks
+      force: true
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
