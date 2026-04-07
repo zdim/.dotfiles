@@ -16,3 +16,5 @@
 - For bugs where the root cause is unclear or I haven't identified a specific file/location, present a diagnosis with evidence before making any changes. Ask for my hypothesis or suggest a minimal diagnostic step (e.g., diffing payloads, checking a specific branch, checking prod behavior). Prefer the simplest explanation.
 - For targeted fixes where I point to specific code or the cause is obvious, just fix it — don't over-diagnose.
 - Before investigating, confirm you're looking in the right project/module. If you're unsure which directory or layer something lives in, ask rather than guessing.
+
+@RTK.md
