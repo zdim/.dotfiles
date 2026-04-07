@@ -10,11 +10,9 @@
       "Bash(find:*)",
       "Bash(xargs:*)",
       "Bash(jq:*)",
-      "Bash(git:*)",
       "Bash(gh pr view:*)",
       "Bash(gh pr diff:*)",
       "Bash(gh issue view:*)",
-      "Bash(gh api:*)",
       "WebSearch",
       "mcp__excalidraw__read_diagram_guide",
       "mcp__excalidraw__describe_scene",
@@ -31,6 +29,10 @@
     ],
     "defaultMode": "acceptEdits"
   },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "model": "opus[1m]",
   "enabledPlugins": {
     "fbg-core@fbg-claude-plugins": true,
@@ -46,20 +48,11 @@
       }
     }
   },
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
   "alwaysThinkingEnabled": true,
   "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/hooks/kitty-status.sh",
-            "timeout": 5
-          }
-        ]
-      }
-    ],
     "Stop": [
       {
         "matcher": "",
