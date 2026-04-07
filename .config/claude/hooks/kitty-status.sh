@@ -1,25 +1,28 @@
 #!/bin/bash
-# Updates kitty tab color based on Claude Code session state.
-# Colors are from the Rose Pine palette.
+# Highlights kitty tab when Claude needs permission.
+# Communicates via unix socket to avoid TTY response leaking into the terminal.
 
 INPUT=$(cat)
 EVENT=$(echo "$INPUT" | jq -r '.hook_event_name // empty')
 
+# Find the kitty socket
+SOCK=$(ls /tmp/kitty-* 2>/dev/null | head -1)
+[ -z "$SOCK" ] && exit 0
+
+KITTY="kitty @ --to unix:$SOCK"
+MATCH="window_id:${KITTY_WINDOW_ID:-0}"
+
 # Rose Pine palette
-DEFAULT_BG="#26233a"    # active tab default
-WORKING_BG="#31748f"    # teal — claude is working
 PERMISSION_BG="#f6c177" # gold — needs permission
-PERMISSION_FG="#191724" # dark bg for contrast on gold
+PERMISSION_BG_DIM="#a67d4a" # dimmed gold for inactive
+PERMISSION_FG="#191724" # dark fg for contrast on gold
 
 case "$EVENT" in
-  PreToolUse)
-    kitty @ set-tab-color -m state:active active_bg="$WORKING_BG"
+  Notification)
+    $KITTY set-tab-color -m "$MATCH" active_bg="$PERMISSION_BG" active_fg="$PERMISSION_FG" inactive_bg="$PERMISSION_BG_DIM" inactive_fg="$PERMISSION_FG"
     ;;
   Stop)
-    kitty @ set-tab-color -m state:active --reset
-    ;;
-  Notification)
-    kitty @ set-tab-color -m state:active active_bg="$PERMISSION_BG" active_fg="$PERMISSION_FG"
+    $KITTY set-tab-color -m "$MATCH" --reset
     ;;
 esac
 
