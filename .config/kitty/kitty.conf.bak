@@ -1,7 +1,5 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
-include ./themes/afterglow.conf
-
 #: Fonts {{{
 
 font_family		JuliaMono 
@@ -23,35 +21,38 @@ disable_ligatures               cursor
 # easily troubleshoot missing/incorrect characters with:
 #   kitty --debug-font-fallback
 # source: https://github.com/ryanoasis/nerd-fonts/wiki/Glyph-Sets-and-Code-Points
+# updated for Nerd Fonts v3
 #--------------------------------------------------------------------------------
-# Seti-UI + Custom
-symbol_map U+E5FA-U+E6AC Symbols Nerd Font
-# Devicons
-symbol_map U+E700-U+E7C5 Symbols Nerd Font
-# Font Awesome
-symbol_map U+F000-U+F2E0 Symbols Nerd Font
-# Font Awesome Extension
-symbol_map U+E200-U+E2A9 Symbols Nerd Font
-# Material Design Icons
-symbol_map U+F0001-U+F1AF0 Symbols Nerd Font
-# Weather
-symbol_map U+E300-U+E3E3 Symbols Nerd Font
-# Octicons
-symbol_map U+F400-U+F532,U+2665,U+26A1 Symbols Nerd Font
+# Pomicons
+symbol_map U+E000-U+E00A Symbols Nerd Font
 # Powerline Symbols
 symbol_map U+E0A0-U+E0A2,U+E0B0-U+E0B3 Symbols Nerd Font
 # Powerline Extra Symbols
-symbol_map U+E0A3,U+E0B4-U+E0C8,U+E0CA,U+E0CC-U+E0D4 Symbols Nerd Font
+symbol_map U+E0A3,U+E0B4-U+E0C8,U+E0CA,U+E0CC-U+E0D7 Symbols Nerd Font
+# Font Awesome Extension
+symbol_map U+E200-U+E2A9 Symbols Nerd Font
+# Weather
+symbol_map U+E300-U+E3E3 Symbols Nerd Font
+# Seti-UI + Custom
+symbol_map U+E5FA-U+E6B7 Symbols Nerd Font
+# Devicons
+symbol_map U+E700-U+E8EF Symbols Nerd Font
+# Codicons
+symbol_map U+EA60-U+EC1E Symbols Nerd Font
+# Font Awesome
+symbol_map U+ED00-U+EFCE,U+F000-U+F2FF Symbols Nerd Font
+# Font Logos
+symbol_map U+F300-U+F381 Symbols Nerd Font
+# Octicons
+symbol_map U+F400-U+F533,U+2665,U+26A1 Symbols Nerd Font
+# Material Design Icons
+symbol_map U+F500-U+FD46,U+F0001-U+F1AF0 Symbols Nerd Font
+# Progress
+symbol_map U+EE00-U+EE0B Symbols Nerd Font
 # IEC Power Symbols
 symbol_map U+23FB-U+23FE,U+2B58 Symbols Nerd Font
-# Font Logos
-symbol_map U+F300-U+F32F Symbols Nerd Font
-# Pomicons
-symbol_map U+E000-U+E00A Symbols Nerd Font
-# Codicons
-symbol_map U+EA60-U+EBEB Symbols Nerd Font
 # Heavy Angle Brackets
-symbol_map U+E276C-U+2771 Symbols Nerd Font
+symbol_map U+276C-U+2771 Symbols Nerd Font
 # Box Drawing
 symbol_map U+2500-U+259F Symbols Nerd Font
 #}}}
@@ -779,13 +780,6 @@ symbol_map U+2500-U+259F Symbols Nerd Font
 #: to be pts. Note that borders are displayed only when more than one
 #: window is visible. They are meant to separate multiple windows.
 
-draw_minimal_borders yes
-
-#: Draw only the minimum borders needed. This means that only the
-#: borders that separate the window from a neighbor are drawn. Note
-#: that setting a non-zero window_margin_width overrides this and
-#: causes all borders to be drawn.
-
 window_margin_width 0
 
 #: The window margin (in pts) (blank area outside the border). A
@@ -836,7 +830,7 @@ window_padding_width 2
 #: Fade the text in inactive windows by the specified amount (a number
 #: between zero and one, with zero being fully faded).
 
-# hide_window_decorations yes
+hide_window_decorations titlebar-and-corners
 
 #: Hide the window decorations (title-bar and window borders) with
 #: yes. On macOS, titlebar-only and titlebar-and-corners can be used
@@ -932,7 +926,7 @@ window_padding_width 2
 #: The second number is the margin between the tab bar and the
 #: contents of the current tab.
 
-# tab_bar_style fade
+tab_bar_style slant
 
 #: The tab bar style, can be one of:
 
@@ -1317,7 +1311,7 @@ dynamic_background_opacity no
 #: See rc_custom_auth <https://sw.kovidgoyal.net/kitty/remote-
 #: control/#rc-custom-auth> for details.
 
-# allow_remote_control no
+allow_remote_control yes
 
 #: Allow other programs to control kitty. If you turn this on, other
 #: programs can control all aspects of kitty, including sending text
@@ -1346,7 +1340,7 @@ dynamic_background_opacity no
 #: yes
 #:     Remote control requests are always accepted.
 
-# listen_on none
+listen_on unix:/tmp/kitty-{kitty_pid}
 
 #: Listen to the specified UNIX socket for remote control connections.
 #: Note that this will apply to all kitty instances. It can be
@@ -1529,7 +1523,7 @@ dynamic_background_opacity no
 #: means to use the default system color, a value of background means
 #: to use the background color of the currently active window and
 #: finally you can use an arbitrary color, such as #12af59 or red.
-# macos_titlebar_color #2b2b2b 
+# macos_titlebar_color #2b2b2b
 
 #: The color of the kitty window's titlebar on macOS. A value of
 #: system means to use the default system color, light or dark can
@@ -2400,6 +2394,7 @@ map cmd+t new_tab_with_cwd
 
 
 # BEGIN_KITTY_THEME
-# citylights
+# Rosé Pine
 include current-theme.conf
 # END_KITTY_THEME
+map shift+enter send_text all \e\r
