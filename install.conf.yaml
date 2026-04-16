@@ -29,8 +29,8 @@
     ~/.claude/CLAUDE.md:
       path: .config/claude/CLAUDE.md
       force: true
-    ~/.claude/settings.json:
-      path: .config/claude/settings.json
+    ~/.claude/statusline.sh:
+      path: .config/claude/statusline.sh
       force: true
     ~/.claude/hooks:
       path: .config/claude/hooks

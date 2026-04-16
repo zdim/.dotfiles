@@ -23,7 +23,7 @@ Dotbot symlinks these paths into `~/.config/` and `~/`:
 - `~/.config/kitty` → `.config/kitty`
 - `~/.Brewfile` → `macos/Brewfile` (macOS only)
 - `~/.claude/CLAUDE.md` → `.config/claude/CLAUDE.md`
-- `~/.claude/settings.json` → `.config/claude/settings.json`
+- `~/.claude/statusline.sh` → `.config/claude/statusline.sh`
 
 ### Zsh (`.config/zsh/`)
 
@@ -44,7 +44,8 @@ Dotbot symlinks these paths into `~/.config/` and `~/`:
 ### Claude Code (`.config/claude/`)
 
 - `CLAUDE.md` — global instructions (symlinked to `~/.claude/CLAUDE.md`)
-- `settings.json` — model, permissions, plugins config. Note: `extraKnownMarketplaces` contains machine-local paths
+- `statusline.sh` — custom status line script (symlinked to `~/.claude/statusline.sh`)
+- `settings.json` — NOT tracked; Claude Code manages `~/.claude/settings.json` directly (atomic writes break symlinks)
 
 ### Kitty (`.config/kitty/`)
 
