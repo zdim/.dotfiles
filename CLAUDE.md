@@ -45,7 +45,6 @@ Dotbot symlinks these paths into `~/.config/` and `~/`:
 
 - `CLAUDE.md` — global instructions (symlinked to `~/.claude/CLAUDE.md`)
 - `statusline.sh` — custom status line script (symlinked to `~/.claude/statusline.sh`)
-- `settings.json` — NOT tracked; Claude Code manages `~/.claude/settings.json` directly (atomic writes break symlinks)
 
 ### Kitty (`.config/kitty/`)
 
