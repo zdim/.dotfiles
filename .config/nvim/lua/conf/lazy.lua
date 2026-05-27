@@ -70,6 +70,18 @@ require("lazy").setup({
 	'udalov/kotlin-vim',
 
 	{
+		'AlexandrosAlexiou/kotlin.nvim',
+		ft = { 'kotlin' },
+		dependencies = {
+			'williamboman/mason.nvim',
+			'williamboman/mason-lspconfig.nvim',
+		},
+		config = function()
+			require('kotlin').setup({})
+		end,
+	},
+
+	{
 		'nvim-lualine/lualine.nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' },
 	},
