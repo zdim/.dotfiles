@@ -63,6 +63,16 @@ require("lazy").setup({
 	'neovim/nvim-lspconfig',
 	'williamboman/mason.nvim',
 	'williamboman/mason-lspconfig.nvim',
+
+	{
+		-- Auto-installs Mason packages that aren't lspconfig servers, so a fresh
+		-- machine bootstraps the JetBrains kotlin-lsp that kotlin.nvim drives.
+		'WhoIsSethDaniel/mason-tool-installer.nvim',
+		dependencies = { 'williamboman/mason.nvim' },
+		config = function()
+			require('mason-tool-installer').setup({ ensure_installed = { 'kotlin-lsp' } })
+		end,
+	},
 	'hrsh7th/nvim-cmp',
 	'hrsh7th/cmp-nvim-lsp',
 	'L3MON4D3/LuaSnip',
@@ -77,7 +87,18 @@ require("lazy").setup({
 			'williamboman/mason-lspconfig.nvim',
 		},
 		config = function()
-			require('kotlin').setup({})
+			require('kotlin').setup({
+				-- Root-only markers (no build.gradle.kts): these exist only at the
+				-- Gradle/Maven root, so root detection lands there instead of the
+				-- nearest subproject, and the whole multi-module build imports with
+				-- its full plugin classpath.
+				root_markers = {
+					'settings.gradle.kts',
+					'settings.gradle',
+					'gradlew',
+					'mvnw',
+				},
+			})
 		end,
 	},
 
